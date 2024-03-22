@@ -5,18 +5,17 @@ export const ComponenteBoton = () => {
   const [counter, setCounter] = useState(0);
 
   const toggleLike = () => {
-    {liked ? setCounter(counter+ 1) : setCounter(counter - 1)}
+    const newCounter = liked ? counter + 1 : counter - 1;
+    setCounter(newCounter);
     setLiked(!liked);
   };
+
   return (
-    <div >
+    <div>
       <button id="butonLiked" onClick={toggleLike}>
         {liked ? 'Me gusta' : 'No me gusta'}
       </button>
-      <p class='count'>Me gusta: {counter}</p>
+      <p className='count'>Me gusta: {counter}</p>
     </div>
   );
-  return (
-    <button id='butonLiked'></button>
-  )
-}
+};
